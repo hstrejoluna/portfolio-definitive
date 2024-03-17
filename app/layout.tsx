@@ -8,7 +8,7 @@ import localFont from 'next/font/local'
 import { MenuList, MenuListItem, Separator, styleReset } from 'react95'
  
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import original from 'react95/dist/themes/original'
+import redWine from 'react95/dist/themes/redWine'
 
 const ms_sans_serif = localFont({ src: '../assets/fonts/ms_sans_serif.woff'})
 const ms_sans_serif_bold = localFont({ src: '../assets/fonts/ms_sans_serif_bold.woff'})
@@ -44,7 +44,7 @@ export default async function RootLayout({
     >
       <body>
         <GlobalStyles />
-        <ThemeProvider theme={original}>{children}</ThemeProvider>
+        <ThemeProvider theme={redWine}>{children}</ThemeProvider>
       </body>
     </html>
   )

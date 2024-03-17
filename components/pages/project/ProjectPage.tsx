@@ -1,3 +1,4 @@
+'use client'
 import type { EncodeDataAttributeCallback } from '@sanity/react-loader'
 import Link from 'next/link'
 
@@ -5,6 +6,8 @@ import { CustomPortableText } from '@/components/shared/CustomPortableText'
 import { Header } from '@/components/shared/Header'
 import ImageBox from '@/components/shared/ImageBox'
 import type { ProjectPayload } from '@/types'
+import { Frame } from 'react95';
+
 
 export interface ProjectPageProps {
   data: ProjectPayload | null
@@ -28,7 +31,10 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
   const endYear = duration?.end ? new Date(duration?.end).getFullYear() : 'Now'
 
   return (
-    <div>
+    <Frame
+    variant='outside'
+    shadow
+    >
       <div className="mb-20 space-y-6">
         {/* Header */}
         <Header title={title} description={overview} />
@@ -107,7 +113,7 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
         )}
       </div>
       <div className="absolute left-0 w-screen border-t" />
-    </div>
+    </Frame>
   )
 }
 

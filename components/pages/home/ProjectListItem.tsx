@@ -1,8 +1,11 @@
+'use client'
 import type { PortableTextBlock } from 'next-sanity'
 
 import { CustomPortableText } from '@/components/shared/CustomPortableText'
 import ImageBox from '@/components/shared/ImageBox'
 import type { ShowcaseProject } from '@/types'
+import { Frame } from 'react95';
+
 
 interface ProjectProps {
   project: ShowcaseProject
@@ -13,7 +16,9 @@ export function ProjectListItem(props: ProjectProps) {
   const { project, odd } = props
 
   return (
-    <div
+    <Frame
+      variant='outside'
+      shadow
       className={`flex flex-col gap-x-5 p-2 transition hover:bg-sky-800 xl:flex-row text-white ${
         odd && 'border-b border-t xl:flex-row-reverse'
       }`}
@@ -28,7 +33,7 @@ export function ProjectListItem(props: ProjectProps) {
       <div className="flex xl:w-1/4">
         <TextBox project={project} />
       </div>
-    </div>
+    </Frame>
   )
 }
 
