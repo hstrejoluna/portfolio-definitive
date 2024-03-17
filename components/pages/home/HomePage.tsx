@@ -16,7 +16,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
   const { overview = [], showcaseProjects = [], title = '' } = data ?? {}
 
   return (
-    <div className="space-y-20">
+    <section className="space-y-20">
       {/* Header */}
       {title && <Header centered title={title} description={overview} />}
       {/* Showcase projects */}
@@ -43,7 +43,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
           })}
         </div>
       )}
-    </div>
+    </section>
   )
 }
 
